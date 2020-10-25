@@ -1,11 +1,9 @@
 import React from 'react';
 
-function App() {
-	return (
-		<div className='App'>
-			<h1>Chupada dimensional reversa</h1>
-		</div>
-	);
-}
+import ApplicationRoutes from './routes';
+
+const App = () => {
+	return <ApplicationRoutes />;
+};
 
 export default App;
