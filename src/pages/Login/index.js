@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 
+import { Container } from './styles';
+
 const Login = () => {
 	const [cpf, setCPF] = useState('111.222.333-44');
 	const [email, setEmail] = useState('teste@hotmail.com');
@@ -60,7 +62,7 @@ const Login = () => {
 	};
 
 	return (
-		<div>
+		<Container>
 			<form onSubmit={handleLogin}>
 				<input
 					defaultValue='teste@hotmail.com'
@@ -79,7 +81,7 @@ const Login = () => {
 				/>
 				<button type='submit'>Entrar</button>
 			</form>
-		</div>
+		</Container>
 	);
 };
 

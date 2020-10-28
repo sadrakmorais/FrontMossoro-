@@ -1,29 +1,19 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React, { useContext } from 'react';
 
-import Login from '../pages/Login';
-import Events from '../pages/Events';
+import { AuthContext } from '../store/Auth';
 
-const ApplicationRoutes = () => {
-	return (
-		<BrowserRouter>
-			<Switch>
-				<Route exact path='/'>
-					<h1>Raiz</h1>
-				</Route>
-				<Route path='/login'>
-					<Login />
-				</Route>
-				<Route path='/events'>
-					<Events />
-				</Route>
+import AuthStack from './auth.routes';
+import AdminStack from './admin.routes';
+import CommomStack from './commom.routes';
 
-				<Route exact path='*'>
-					<h1>404</h1>
-				</Route>
-			</Switch>
-		</BrowserRouter>
-	);
+const Routes = () => {
+	const { isLogged, user } = useContext(AuthContext);
+
+	if (!isLogged) {
+		return <AuthStack />;
+	}
+
+	return user.userLevel === 0 ? <AdminStack /> : <CommomStack />;
 };
 
-export default ApplicationRoutes;
+export default Routes;
