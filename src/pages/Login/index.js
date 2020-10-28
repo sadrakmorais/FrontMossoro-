@@ -1,12 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Axios from 'axios';
+import * as Yup from 'yup';
 
-import { Container } from './styles';
+import Button from '../../components/Button';
+import Form from '../../components/Form';
+import Input from '../../components/Input';
+import { Container, FormContainer, RememberMe } from './styles';
+
+import { AuthContext } from '../../store/Auth';
 
 const Login = () => {
+	const { signIn } = useContext(AuthContext);
+
 	const [cpf, setCPF] = useState('111.222.333-44');
 	const [email, setEmail] = useState('teste@hotmail.com');
 	const [password, setPassword] = useState('teste123');
+	const [remember, setRemember] = useState(false);
 
 	useEffect(() => {
 		/** useEffect usado para verificar se o usuário já esta autenticado.
@@ -44,10 +53,20 @@ const Login = () => {
 			const payload = { email, cpf, password };
 			const response = await Axios.post('http://localhost:3000/api/v1/auth', payload);
 
-			const authToken = response.data.auth;
+			const validationSchema = Yup.object().shape({
+				email: Yup.string().required(),
+				cpf: Yup.string().required(),
+				password: Yup.string().required(),
+			});
 
-			return localStorage.setItem('@AUTH', authToken);
+			await validationSchema.validate(payload);
+
+			signIn();
 		} catch (error) {
+			if (error instanceof Yup.ValidationError) {
+				return alert('Preencha todos os campos corretamente');
+			}
+
 			const { status } = error.response;
 
 			switch (status) {
@@ -63,24 +82,37 @@ const Login = () => {
 
 	return (
 		<Container>
-			<form onSubmit={handleLogin}>
-				<input
-					defaultValue='teste@hotmail.com'
-					placeholder='CPF'
-					onChange={(e) => setCPF(e.target.value)}
-				/>
-				<input
-					defaultValue='111.222.333-44'
-					placeholder='email'
-					onChange={(e) => setEmail(e.target.value)}
-				/>
-				<input
-					defaultValue='teste123'
-					placeholder='password'
-					onChange={(e) => setPassword(e.target.value)}
-				/>
-				<button type='submit'>Entrar</button>
-			</form>
+			<FormContainer>
+				<h1>Entrar</h1>
+				<Form onSubmit={handleLogin}>
+					<Input
+						label='CPF'
+						defaultValue='teste@hotmail.com'
+						onChange={(e) => setCPF(e.target.value)}
+					/>
+					<Input
+						label='email'
+						defaultValue='111.222.333-44'
+						onChange={(e) => setEmail(e.target.value)}
+					/>
+					<Input
+						label='password'
+						defaultValue='teste123'
+						onChange={(e) => setPassword(e.target.value)}
+					/>
+
+					<RememberMe>
+						<input
+							type='checkbox'
+							checked={remember}
+							onChange={() => setRemember(!remember)}
+						/>
+						<label>Lembrar-me</label>
+					</RememberMe>
+
+					<Button type='submit'>Entrar</Button>
+				</Form>
+			</FormContainer>
 		</Container>
 	);
 };

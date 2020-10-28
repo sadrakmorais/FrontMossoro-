@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const Button = ({ children, ...rest }) => {
+const Form = ({ children, ...rest }) => {
 	return <Container {...rest}>{children}</Container>;
 };
 
-export default Button;
+export default Form;
