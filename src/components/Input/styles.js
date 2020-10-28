@@ -19,6 +19,7 @@ export const Container = styled.div`
 		border: 1px solid #dedede;
         height: 38px;
         transition: 300ms;
+		font-size: 15px;
 
 		&:hover {
 			border-color: #ccc;

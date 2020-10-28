@@ -51,7 +51,7 @@ const Login = () => {
 			e.preventDefault();
 
 			const payload = { email, cpf, password };
-			const response = await Axios.post('http://localhost:3000/api/v1/auth', payload);
+			const { data } = await Axios.post('http://localhost:3000/api/v1/auth', payload);
 
 			const validationSchema = Yup.object().shape({
 				email: Yup.string().required(),
@@ -61,7 +61,7 @@ const Login = () => {
 
 			await validationSchema.validate(payload);
 
-			signIn();
+			signIn(data.user, data.auth, remember);
 		} catch (error) {
 			if (error instanceof Yup.ValidationError) {
 				return alert('Preencha todos os campos corretamente');
@@ -85,19 +85,11 @@ const Login = () => {
 			<FormContainer>
 				<h1>Entrar</h1>
 				<Form onSubmit={handleLogin}>
-					<Input
-						label='CPF'
-						defaultValue='teste@hotmail.com'
-						onChange={(e) => setCPF(e.target.value)}
-					/>
-					<Input
-						label='email'
-						defaultValue='111.222.333-44'
-						onChange={(e) => setEmail(e.target.value)}
-					/>
+					<Input label='CPF' value={cpf} onChange={(e) => setCPF(e.target.value)} />
+					<Input label='email' value={email} onChange={(e) => setEmail(e.target.value)} />
 					<Input
 						label='password'
-						defaultValue='teste123'
+						value={password}
 						onChange={(e) => setPassword(e.target.value)}
 					/>
 

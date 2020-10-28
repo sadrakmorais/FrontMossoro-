@@ -9,11 +9,13 @@ import CommomStack from './commom.routes';
 const Routes = () => {
 	const { isLogged, user } = useContext(AuthContext);
 
+	console.log({isLogged});
+
 	if (!isLogged) {
 		return <AuthStack />;
 	}
 
-	return user.userLevel === 0 ? <AdminStack /> : <CommomStack />;
+	return user.level === 0 ? <AdminStack /> : <CommomStack />;
 };
 
 export default Routes;

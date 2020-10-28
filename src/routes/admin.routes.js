@@ -1,14 +1,23 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Events from '../pages/Events';
+
+const authRoutes = ['/login', '/register'];
 
 const ApplicationRoutes = () => {
 	return (
 		<BrowserRouter>
 			<Switch>
+				<Route exact path={authRoutes}>
+					<Redirect to='/home' />
+				</Route>
+
 				<Route exact path='/'>
 					<h1>Raiz</h1>
+				</Route>
+				<Route exact path='/home'>
+					<h1>HOME</h1>
 				</Route>
 				<Route exact path='/events'>
 					<Events />
