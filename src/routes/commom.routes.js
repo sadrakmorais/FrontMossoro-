@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Events from '../pages/Events';
+import Layout from '../components/Layout';
 
 const authRoutes = ['/login', '/register'];
 
@@ -17,13 +18,19 @@ const ApplicationRoutes = () => {
 					<h1>Raiz</h1>
 				</Route>
 				<Route exact path='/home'>
-					<h1>HOME</h1>
+					<Layout>
+						<h1>HOME</h1>
+					</Layout>
 				</Route>
 				<Route exact path='/events'>
-					<Events />
+					<Layout>
+						<Events />
+					</Layout>
 				</Route>
 				<Route exact path='/events/submit'>
-					<h1>Eventos Pendentes</h1>
+					<Layout>
+						<h1>Eventos Pendentes</h1>
+					</Layout>
 				</Route>
 
 				<Route exact path='*'>
