@@ -2,13 +2,14 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Login from '../pages/Login';
+import Home from '../pages/Home';
 
 const ApplicationRoutes = () => {
 	return (
 		<BrowserRouter>
 			<Switch>
 				<Route exact path='/'>
-					<h1>Raiz</h1>
+					<Home />
 				</Route>
 				<Route path='/login'>
 					<Login />
