@@ -12,9 +12,9 @@ import { AuthContext } from '../../store/Auth';
 const Login = () => {
 	const { signIn } = useContext(AuthContext);
 
-	const [cpf, setCPF] = useState('111.222.333-44');
-	const [email, setEmail] = useState('teste@hotmail.com');
-	const [password, setPassword] = useState('teste123');
+	const [cpf, setCPF] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 	const [remember, setRemember] = useState(false);
 
 	useEffect(() => {
