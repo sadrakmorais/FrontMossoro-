@@ -31,7 +31,26 @@ const Menu = () => {
 				<Exit onClick={signOut} exit>Sair</Exit>
 			</Container>
 		);
-	}
+    }
+    if (user.level === null){
+        return (
+		<Container>
+			<ul>
+				<MenuLink active={pathname === '/home'}>
+					<Link to='/home'>Início</Link>
+				</MenuLink>
+				<MenuLink active={pathname === '/events'}>
+					<Link to='/events'>Eventos</Link>
+				</MenuLink>
+				<MenuLink active={pathname === '/events/events'}>
+					<Link to='/events/events'>Submeter Evento</Link>
+				</MenuLink>
+			</ul>
+			<Exit onClick={signOut} exit>Sair</Exit>
+		</Container>
+	);
+
+    }
 
 	/** usuário comum */
 	return (

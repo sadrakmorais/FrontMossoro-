@@ -1,22 +1,22 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
+import Register from '../pages/Register';
 import Login from '../pages/Login';
-import Home from '../pages/Home';
+import LadingPage from '../pages/LandingPage';
+
 
 const ApplicationRoutes = () => {
 	return (
 		<BrowserRouter>
 			<Switch>
 				<Route exact path='/'>
-					<Home />
+					<LadingPage/>
 				</Route>
 				<Route path='/login'>
 					<Login />
 				</Route>
-
-				<Route path='/register'>
-					<h1>CADASTRO</h1>
+                <Route path='/register'>
+					<Register/>
 				</Route>
 
 				<Route exact path='*'>

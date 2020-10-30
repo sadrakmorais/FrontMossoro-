@@ -17,6 +17,7 @@ const ApplicationRoutes = () => {
 				<Route exact path='/'>
 					<h1>Raiz</h1>
 				</Route>
+
 				<Route exact path='/home'>
 					<Layout>
 						<h1>HOME</h1>

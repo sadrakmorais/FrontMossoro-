@@ -12,6 +12,7 @@ export const Container = styled.button`
 	align-items: center;
     border-radius: 4px;
 	justify-content: center;
+    padding: 10px;
 
 	&:hover {
 		background: rgba(40, 16, 232);

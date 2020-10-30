@@ -1,14 +1,6 @@
 import styled from 'styled-components';
 
-export const Header = styled.header`
-position: absolute;
-width: 100%;
-height: 74px;
-left: 0px;
-top: -10px;
-background: #AB17DF;
 
-`
 export const Container = styled.main`
 	width: 100%;
 	height: 100%;
@@ -22,12 +14,15 @@ export const FormContainer = styled.div`
 	box-shadow: 0px 2px 3px 1px rgba(100, 100, 100, 0.3);
 	width: 500px;
 	padding: 24px;
+    align-items: center;
 	background: #ffffff;
+
 
 	& > h1 {
 		font-size: 28px;
 		color: rgba(20, 20, 20, 0.8);
         margin-bottom: 12px;
+        justify-content: center;
 	}
 
 	& form {

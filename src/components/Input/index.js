@@ -7,6 +7,7 @@ const Input = ({ label, ...rest }) => {
 		<Container>
 			<label>{label}</label>
 			<input {...rest} />
+
 		</Container>
 	);
 };
