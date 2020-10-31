@@ -30,7 +30,7 @@ const Register = () =>{
             <Input label="Email" value={email} onChange={(e) => setEmail(e.target.value)} ></Input>
             <Input label="CPF" value={cpf} onChange={(e) => setCPF(e.target.value)} ></Input>
             <Input label="Celular" value={phone} onChange={(e) => setPhone(e.target.value)} ></Input>
-            <Input label="Senha" value={password} onChange={(e) => setPassword(e.target.value)} ></Input>
+            <Input label="Senha" type='password'value={password} onChange={(e) => setPassword(e.target.value)} ></Input>
             <Aluno>
             <input type='checkbox'checked={aluno} onChange={() => setIsAluno(!aluno)}/>
 			<label>É aluno da UERN?</label>

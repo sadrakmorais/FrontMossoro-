@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Events from '../pages/Events';
 import Layout from '../components/Layout';
+import SubmitEvents from '../pages/SubmitEvents'
 
 const authRoutes = ['/login', '/register'];
 
@@ -15,7 +16,7 @@ const ApplicationRoutes = () => {
 				</Route>
 
 				<Route exact path='/'>
-					<h1>Raiz</h1>
+                <Redirect to='/home' />
 				</Route>
 				<Route exact path='/home'>
 					<Layout>
@@ -29,7 +30,7 @@ const ApplicationRoutes = () => {
 				</Route>
 				<Route exact path='/events/submit'>
 					<Layout>
-						<h1>Submeter Evento</h1>
+						<SubmitEvents/>
 					</Layout>
 				</Route>
 				<Route exact path='/events/pending'>

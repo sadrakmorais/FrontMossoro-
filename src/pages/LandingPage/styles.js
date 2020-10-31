@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import img from '../../assets/backGround.png'
 
 export const BackgroundI = styled.div`
@@ -45,4 +45,49 @@ margin-left:800px;
 
 `
 
+
+export const Container = styled.aside`
+	flex: 0.2;
+	background: #fff;
+	height: 100%;
+	padding: 24px;
+	border-right: 1px solid #ccc;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+`;
+
+export const Menu = styled.nav`
+	width: 100%;
+	margin-top: 48px;
+`;
+
+export const MenuLink = styled.li`
+	border-radius: 4px;
+	margin: 4px 0;
+	transition: 100ms;
+	display: flex;
+
+	& > a {
+		padding: 10px 12px;
+		cursor: pointer;
+		font-size: 17px;
+		color: rgba(50, 50, 50);
+		flex: 1;
+		border-radius: 4px;
+	}
+
+	&:hover {
+		background: #f3f3f3;
+	}
+
+	${({ active }) =>
+		active &&
+		css`
+			& > a {
+				background: rgba(0, 116, 232);
+				color: #ffffff;
+			}
+		`}
+`;
 

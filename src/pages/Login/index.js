@@ -86,12 +86,8 @@ const Login = () => {
 				<h1>Entrar</h1>
 				<Form onSubmit={handleLogin}>
 					<Input label='CPF' value={cpf} onChange={(e) => setCPF(e.target.value)} />
-					<Input label='email' value={email} onChange={(e) => setEmail(e.target.value)} />
-					<Input
-						label='password'
-						value={password}
-						onChange={(e) => setPassword(e.target.value)}
-					/>
+					<Input label='EMAIL' value={email} onChange={(e) => setEmail(e.target.value)} />
+					<Input label='SENHA' type='password'value={password} onChange={(e) => setPassword(e.target.value)}/>
 
 					<RememberMe>
 						<input
