@@ -4,7 +4,7 @@ export const Container = styled.aside`
 	flex: 0.2;
 	background: #fff;
 	height: 100%;
-	padding: 24px;
+	padding: 26px;
 	border-right: 1px solid #ccc;
 	display: flex;
 	flex-direction: column;
@@ -59,6 +59,6 @@ export const Exit = styled.button`
     font-weight: 500;
 
 	&:hover {
-		background: #ccc;        
+		background: #ccc;
 	}
 `;

@@ -1,35 +1,43 @@
 import React from 'react';
+import CapaEvent from '../CapaEvent'
+import TitleEvent from '../TitleEvent'
+import EndData from '../DataEvent/EndData'
+import StartData from '../DataEvent/StartData'
+import VacationEvent from '../VacationEvent'
+import DescriptionEvent from '../DescriptionEvent'
 
 import {
-	ContainerEventCard,
-	EventImage,
-	EventTitle,
-	EventDate,
-	EventVacations,
-	EventCardFooter,
-	EventDescription,
+    Container,
+    FormContainer,
+    InfoContainer,
+    DataContainer,
+    VacationsContainer
 } from './styles';
 
 const EventCard = ({ ...rest }) => {
+
 	return (
-		<ContainerEventCard>
-			<EventImage>
-				<img
-					src='https://images.sympla.com.br/5f96f4d174434.png'
-					alt='n binario'
-				/>
-			</EventImage>
-			<EventTitle>N Binario</EventTitle>
-			<EventDescription> Vai ser babado</EventDescription>
-            <EventCardFooter>
-				<span>Entre </span>
-				<EventDate> 10/75/7887</EventDate>
-				<span>e</span>
-				<EventDate>11/75/7887</EventDate>
-				<EventVacations> 2 vagas</EventVacations>
-			</EventCardFooter>
-		</ContainerEventCard>
-	);
+        <Container>
+
+            <FormContainer>
+            <CapaEvent>{<img src="https://images.sympla.com.br/5f96f4d174434.png" alt="teste" width="100%"/>}</CapaEvent>
+            <InfoContainer>
+            <TitleEvent></TitleEvent>
+            <DescriptionEvent></DescriptionEvent>
+            <DataContainer>
+                <StartData></StartData>
+
+                <EndData></EndData>
+            <VacationsContainer>
+                <VacationEvent></VacationEvent>
+            </VacationsContainer>
+            </DataContainer>
+
+            </InfoContainer>
+            </FormContainer>
+        </Container>
+
+    )
 };
 
 export default EventCard;

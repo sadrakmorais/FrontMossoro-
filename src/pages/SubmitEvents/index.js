@@ -8,7 +8,7 @@ import { Container, FormContainer} from './styles';
 const SubmitEvents = () =>{
 
     const [name, setName] = useState('');
-    const [period, setPeriod] = useState('');
+
     const [start, setStart] = useState('');
     const [end, setEnd] = useState('');
     const [description, setDescription] = useState('');
@@ -25,7 +25,7 @@ const SubmitEvents = () =>{
                 <h1>INFORMAÇÕES DO EVENTO</h1>
                 <Form>
             <Input label="Nome do Evento" value={name} onChange={(e) => setName(e.target.value)} ></Input>
-            <Input label="Duração" value={period} onChange={(e) => setPeriod(e.target.value)} ></Input>
+             <span>Duração</span>
             <Form>
             <Input label="Inicio" value={start} onChange={(e) => setStart(e.target.value)} ></Input>
             <Input label="Fim" value={end} onChange={(e) => setEnd(e.target.value)} ></Input>

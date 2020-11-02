@@ -1,42 +1,54 @@
 import styled from 'styled-components';
 
-export const ContainerEventCard = styled.div`
-	border-radius: 8px;
-
-	border: 1px solid #c3c3c3;
-	box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.15);
+export const Container = styled.div`
+width: 100%;
+	height: 100%;
 	display: flex;
-	padding: 15px;
 	align-items: flex-start;
+	justify-content:initial;
+	background: #f1f1f1;
+
+`
+export const FormContainer = styled.div`
+border-radius: 4px;
+box-shadow: 0px 2px 3px 1px rgba(100, 100, 100, 0.3);
+width: 100%;
+align-items: flex-start;
+padding: 10px;
+display: flex;
+
+
+& > h1 {
+    font-size: 28px;
+    color: rgba(20, 20, 20, 0.8);
+    margin-bottom: 12px;
+}
+
+& form {
+    width: 100%;
+}
 `;
 
-export const EventImage = styled.div`
-	max-width: 10px;
-	margin-right: 20px;
-    display: flex;
-`;
+export const InfoContainer = styled.div`
+height:196px;
+width:100%;
 
-export const EventTitle = styled.h1`
-	font-size: 16px;
-	color: #2c3e50;
-`;
-export const EventDescription = styled.span`
-	font-size: 16px;
-	color: black;
-`;
+padding:5px;
+display: inline;
 
-export const EventVacations = styled.span`
-	font-size: 20px;
-	font-weight: 700;
-	color: #3498db;
-`;
+`
 
-export const EventCardFooter = styled.footer`
-	display: flex;
-	align-items: center;
-`;
+export const DataContainer = styled.footer`
+display: flex;
+width: 100%;
 
-export const EventDate = styled.span`
-	color: #95a5a6;
-	font-weight: 700;
-`;
+
+`
+export const VacationsContainer = styled.div`
+display: flex;
+width: 50%;
+
+
+padding-left:50%;
+
+`

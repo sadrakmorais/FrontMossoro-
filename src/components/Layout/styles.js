@@ -4,6 +4,7 @@ export const Container = styled.section`
     display: flex;
     width: 100%;
     height: 100%;
+
 `;
 
 export const Workspace = styled.div`
@@ -11,5 +12,6 @@ export const Workspace = styled.div`
     background: #f1f1f1;
     height: 100%;
     overflow-y: auto;
-    padding: 24px;
+    padding:10px;
+
 `;
