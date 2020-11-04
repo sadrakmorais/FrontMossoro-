@@ -1,11 +1,13 @@
 import React from 'react';
 
 
+
 import {  BackgroundI, Mossoro, ContainerBotton, Span} from './styles';
 import Button from '../../components/Button';
 
 
 const LandingPage = () =>{
+
 
 
     return(
@@ -16,8 +18,8 @@ const LandingPage = () =>{
             </Mossoro>
             <Span>Encontre e divulgue seu evento aqui.</Span>
             <ContainerBotton>
-                <Button type='submit'>Login</Button>
-                <Button type='submit'>Cadastrar</Button>
+                <Button type="submit">Login</Button>
+                <Button type="submit" >Cadastrar</Button>
             </ContainerBotton>
 
 

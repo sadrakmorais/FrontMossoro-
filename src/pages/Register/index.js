@@ -20,9 +20,8 @@ const Register = () =>{
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
-    const course = '5fa20a55819f2418040ffffe'
+    const [course,setCourse] = useState('');
     const registration = '123456'
-
 
 
     const HandleRegister = async (e) =>{
@@ -33,6 +32,8 @@ const Register = () =>{
             email: Yup.string().required(),
             cpf: Yup.string().required(),
             password: Yup.string().required(),
+            name: Yup.string().required(),
+            phone: Yup.string().required(),
         });
 
         await validationSchema.validate(payload);
@@ -80,56 +81,56 @@ const Register = () =>{
 			<label>É aluno da UERN?</label>
             </Aluno>
             <span>Escolha seu curso</span>
-            <select name="SelectCourse" id="SelectCourse">
+            <select value="option"onChange={(e) => setCourse(e.target.value)}>
                 <optgroup label="FANAT">
-                <option value="">Ciências Biológicas (Bach.)</option>
-                <option value="">Ciências Biológicas (Lic.)</option>
-                <option value="">Ciência da Computação</option>
-                <option value="">Física</option>
-                <option value="">Química</option>
-                <option value="">Matématica</option>
+                <option value="5fa1ec9f819f2418040ffff7">Ciências Biológicas (Bach.)</option>
+                <option value="5fa1eca8819f2418040ffff8">Ciências Biológicas (Lic.)</option>
+                <option value="5fa1ec5f819f2418040ffff4">Ciência da Computação</option>
+                <option value="5fa1ec6d819f2418040ffff5">Física</option>
+                <option value="5fa1ec80819f2418040ffff6">Química</option>
+                <option value="5fa2eb85770cc50f401d866d">Matématica</option>
                 </optgroup>
                 <optgroup label='FACEM'>
-                <option value="">Administração</option>
-                <option value="">Ciência Contábeis</option>
-                <option value="">Ciência Econômicas</option>
-                <option value="">Gestão Ambiental</option>
-                <option value="">Turismo</option>
+                <option value="5fa1eb62819f2418040fffef">Administração</option>
+                <option value="5fa1eba0819f2418040ffff0">Ciência Contábeis</option>
+                <option value="5fa1ebc3819f2418040ffff1">Ciência Econômicas</option>
+                <option value="5fa1ec03819f2418040ffff2">Gestão Ambiental</option>
+                <option value="5fa1ec13819f2418040ffff3">Turismo</option>
                 </optgroup>
                 <optgroup label='FALA'>
-                <option value="">Letras (Língua Portuguesa)</option>
-                <option value="">Letras (Língua Inglesa)</option>
-                <option value="">Letras (Língua Espanhola)</option>
-                <option value="">Música</option>
+                <option value="5fa2ed7f770cc50f401d866f">Letras (Língua Portuguesa)</option>
+                <option value="5fa2ed88770cc50f401d8670">Letras (Língua Inglesa)</option>
+                <option value="5fa2ed8f770cc50f401d8671">Letras (Língua Espanhola)</option>
+                <option value="5fa2eda0770cc50f401d8672">Música</option>
                 </optgroup>
                 <optgroup label='FAFIC'>
-                <option value="">Ciência Sociais (Bach.)</option>
-                <option value="">Ciência Sociais (Lic.)</option>
-                <option value="">Comunicação Social (Jornalismo)</option>
-                <option value="">Comunicação Social (Publicidade e Propaganda)</option>
-                <option value="">Comunicação Social (Radialismo)</option>
-                <option value="">Filosofia</option>
-                <option value="">Geografia</option>
-                <option value="">História</option>
+                <option value="5fa209b9819f2418040ffff9">Ciência Sociais (Bach.)</option>
+                <option value="5fa2ec4a770cc50f401d866e">Ciência Sociais (Lic.)</option>
+                <option value="5fa20a1a819f2418040ffffa">Comunicação Social (Jornalismo)</option>
+                <option value="5fa20a27819f2418040ffffb">Comunicação Social (Publicidade e Propaganda)</option>
+                <option value="5fa20a34819f2418040ffffc">Comunicação Social (Radialismo)</option>
+                <option value="5fa20a46819f2418040ffffd">Filosofia</option>
+                <option value="5fa20a55819f2418040ffffe">Geografia</option>
+                <option value="5fa20a68819f2418040fffff">História</option>
                 </optgroup>
                 <optgroup label='FASSO'>
-                <option value="">Serviço Social</option>
+                <option value="5fa20ac0819f241804100000">Serviço Social</option>
                 </optgroup>
                 <optgroup label='FE'>
-                <option value="">Pedagogia</option>
+                <option value="5fa20ad8819f241804100001">Pedagogia</option>
                 </optgroup>
                 <optgroup label='FAEF'>
-                <option value="">Educação Física (Bach.)</option>
-                <option value="">Educação Física (Lic)</option>
+                <option value="5fa20afa819f241804100002">Educação Física (Bach.)</option>
+                <option value="5fa20b00819f241804100003">Educação Física (Lic)</option>
                 </optgroup>
                 <optgroup label='FAEN'>
-                <option value="">Enfermagem</option>
+                <option value="5fa20b21819f241804100004">Enfermagem</option>
                 </optgroup>
                 <optgroup label='FAD'>
-                <option value="">Direito</option>
+                <option value="5fa20b2f819f241804100005">Direito</option>
                 </optgroup>
                 <optgroup label='FACS'>
-                <option value="">Medicina</option>
+                <option value="5fa20b3f819f241804100006">Medicina</option>
                 </optgroup>
             </select>
 

@@ -17,10 +17,11 @@ const SubmitEvents = () =>{
     const [vacancies, setVacancies] = useState('');
     const [location, setLocation] = useState('');
     const [observations, setObservations] = useState('');
+    const department = '5fa1e9a0819f2418040fffe4'
 
     const HandleSubmitEvent = async (e) =>{
         try{e.preventDefault();
-        const payload = { name, start, end,description,vacancies,location,observations };
+        const payload = { name, start, end,description,vacancies,location,observations,department };
         await Axios.post('http://localhost:3000/api/v1/events', payload);
         const validationSchema = Yup.object().shape({
             name: Yup.string().required(),
@@ -65,8 +66,8 @@ const SubmitEvents = () =>{
             <Input label="Nome do Evento" value={name} onChange={(e) => setName(e.target.value)} ></Input>
              <span>Duração</span>
             <Form>
-            <Input label="Inicio" value={start} onChange={(e) => setStart(e.target.value)} ></Input>
-            <Input label="Fim" value={end} onChange={(e) => setEnd(e.target.value)} ></Input>
+            <Input label="Inicio" type="date"value={start} onChange={(e) => setStart(e.target.value)} ></Input>
+            <Input label="Fim" type="date"value={end} onChange={(e) => setEnd(e.target.value)} ></Input>
             </Form>
             <Input label="Descrição"value={description} onChange={(e) => setDescription(e.target.value)} ></Input>
 

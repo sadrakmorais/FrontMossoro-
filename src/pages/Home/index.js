@@ -2,13 +2,17 @@ import React from 'react';
 import EventCard from '../../components/EventCard';
 import { Container, Header, CardContainer } from './styles';
 
-const Events = () => {
+const Home = () => {
 	return (
 		<Container>
-           <Header>Seus eventos</Header>
+           <Header>Eventos Diponíveis</Header>
            <CardContainer>
                <li>
-
+               <EventCard></EventCard>
+               <EventCard></EventCard>
+               <EventCard></EventCard>
+               <EventCard></EventCard>
+               <EventCard></EventCard>
                </li>
            </CardContainer>
 
@@ -17,4 +21,4 @@ const Events = () => {
 	);
 };
 
-export default Events;
+export default Home;
