@@ -1,18 +1,8 @@
 import React from 'react';
-import {
-    Container
-} from './styles';
+import { Container } from './styles';
 
-const DescriptionEvent = () =>{
+const DescriptionEvent = ({ children }) => {
+	return <Container>{children}</Container>;
+};
 
-    return (
-
-
-        <Container>lkgljkglkjgkj</Container>
-    )
-
-
-
-}
-
-export default DescriptionEvent
+export default DescriptionEvent;

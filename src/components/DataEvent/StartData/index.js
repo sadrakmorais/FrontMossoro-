@@ -1,17 +1,15 @@
-import React from 'react'
-import {Container,DataContainer} from './styles';
+import React from 'react';
+import { Container, DataContainer } from './styles';
 
+const StartData = ({ children }) => {
+	return (
+		<Container>
+			<span>Início:</span>
+			<DataContainer>
+				<span>{children}</span>
+			</DataContainer>
+		</Container>
+	);
+};
 
-const StartData = () =>{
-
-    return (
-
-        <Container> <span>Início:</span>
-        <DataContainer> <span>11/11/95</span></DataContainer>
-        </Container>
-
-    )
-}
-
-
-export default StartData
+export default StartData;
