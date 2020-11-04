@@ -20,6 +20,8 @@ const SubmitEvents = () => {
 	const [vacancies, setVacancies] = useState('');
 	const [location, setLocation] = useState('');
 	const [observations, setObservations] = useState('');
+	const [photo, setPhoto] = useState('');
+
 	const department = '5fa1e9a0819f2418040fffe4';
 
 	const HandleSubmitEvent = async (e) => {
@@ -36,6 +38,7 @@ const SubmitEvents = () => {
 				location,
 				observations,
 				department,
+				photo,
 			};
 
 			const validationSchema = Yup.object().shape({
@@ -49,6 +52,7 @@ const SubmitEvents = () => {
 				vacancies: Yup.number().required(),
 				location: Yup.string().required(),
 				observations: Yup.string(),
+				photo: Yup.string(),
 			});
 
 			await validationSchema.validate(payload);
@@ -117,7 +121,10 @@ const SubmitEvents = () => {
 						label='Observações'
 						value={observations}
 						onChange={(e) => setObservations(e.target.value)}></Input>
-					<br />
+					
+						<Input label='Insira a URL da Capa do evento'
+						value={photo}
+						onChange={(e) => setPhoto(e.target.value)}></Input>
 					<Button type='submit'>SOLICITAR</Button>
 				</Form>
 			</FormContainer>

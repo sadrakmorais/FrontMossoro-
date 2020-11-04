@@ -2,16 +2,17 @@ import React from 'react'
 import {Container,DataContainer} from './styles';
 
 
-const EndData = () =>{
+const EndData = ({children}) =>{
 
     return (
-
-        <Container> <span>Fim:</span>
-        <DataContainer> <span>15/11/95</span></DataContainer>
-        </Container>
-
-    )
-}
+		<Container>
+			<span>Fim:</span>
+			<DataContainer>
+				<span>{children}</span>
+			</DataContainer>
+		</Container>
+	);
+};
 
 
 export default EndData

@@ -5,6 +5,7 @@ import EndData from '../DataEvent/EndData';
 import StartData from '../DataEvent/StartData';
 import VacationEvent from '../VacationEvent';
 import DescriptionEvent from '../DescriptionEvent';
+import Button from '../Button';
 
 import {
 	Container,
@@ -12,6 +13,7 @@ import {
 	InfoContainer,
 	DataContainer,
 	VacationsContainer,
+	ContainerSubscribe
 } from './styles';
 
 import { AuthContext } from '../../store/Auth';
@@ -32,16 +34,15 @@ const EventCard = ({ event }) => {
 
 	return (
 		<Container>
-			<button style={{ background: 'red' }} onClick={handleSubscribe}>
-				INSCREVER-SE
-			</button>
+			
 			<FormContainer>
 				<CapaEvent>
 					{
 						<img
-							src='https://images.sympla.com.br/5f96f4d174434.png'
-							alt='teste'
+							src={event.photo}
+							alt='capa do evento'
 							width='100%'
+							height="100%"
 						/>
 					}
 				</CapaEvent>
@@ -51,8 +52,10 @@ const EventCard = ({ event }) => {
 					<DataContainer>
 						<StartData>{new Date(event.period.start).toLocaleDateString()}</StartData>
 						<EndData>{new Date(event.period.end).toLocaleDateString()}</EndData>
+						<ContainerSubscribe><Button style={{ background: 'color: #3498DB;' }} onClick={handleSubscribe}>Inscrever-se</Button></ContainerSubscribe>
 						<VacationsContainer>
 							<VacationEvent>{event.vacancies}</VacationEvent>
+							
 						</VacationsContainer>
 					</DataContainer>
 				</InfoContainer>

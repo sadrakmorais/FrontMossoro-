@@ -49,6 +49,13 @@ display: flex;
 width: 50%;
 
 
-padding-left:50%;
+padding-left:20%;
+
+`
+export const ContainerSubscribe = styled.div`
+padding-left:10%;
+padding-top:2px;
+margin-top:1px;
+cursor: pointer;
 
 `
