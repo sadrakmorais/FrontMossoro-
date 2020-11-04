@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import * as Yup from 'yup';
-import Axios from 'axios';
+
+import {useHistory} from 'react-router-dom'
 
 import Form from '../../components/Form';
 import Button from '../../components/Button';
@@ -10,6 +11,7 @@ import { Container, FormContainer } from './styles';
 import { POST } from '../../services/api';
 
 const SubmitEvents = () => {
+	const history = useHistory()
 	const [name, setName] = useState('');
 
 	const [start, setStart] = useState('');
@@ -25,9 +27,10 @@ const SubmitEvents = () => {
 			e.preventDefault();
 
 			const payload = {
-				name,
+				name,period:
+				{
 				start,
-				end,
+				end},
 				description,
 				vacancies,
 				location,
@@ -37,8 +40,11 @@ const SubmitEvents = () => {
 
 			const validationSchema = Yup.object().shape({
 				name: Yup.string().required(),
-				start: Yup.date().required(),
+				period: Yup.object().shape({
+        start: Yup.date().required(),
 				end: Yup.date().required(),
+				}),
+				
 				description: Yup.string().required(),
 				vacancies: Yup.number().required(),
 				location: Yup.string().required(),
@@ -47,9 +53,10 @@ const SubmitEvents = () => {
 
 			await validationSchema.validate(payload);
 
-			const { data } = await POST('/events', payload);
+			await POST('/events', payload);
+			history.push('/home')
 
-			console.log(data);
+			
 		} catch (error) {
 			console.log(error);
 

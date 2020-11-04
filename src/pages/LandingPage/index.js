@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 
 
@@ -18,8 +19,8 @@ const LandingPage = () =>{
             </Mossoro>
             <Span>Encontre e divulgue seu evento aqui.</Span>
             <ContainerBotton>
-                <Button type="submit">Login</Button>
-                <Button type="submit" >Cadastrar</Button>
+            <Link to='/login'><Button>Login</Button></Link>
+                <Link to='/register'><Button>Cadastrar</Button></Link>
             </ContainerBotton>
 
 

@@ -80,7 +80,9 @@ const Register = () =>{
             <input type='checkbox'checked={isStudent} onChange={() => setIsAluno(!isStudent)}/>
 			<label>É aluno da UERN?</label>
             </Aluno>
-            <span>Escolha seu curso</span>
+            {isStudent && (
+
+                <div><span>Escolha seu curso</span>
             <select value="option"onChange={(e) => setCourse(e.target.value)}>
                 <optgroup label="FANAT">
                 <option value="5fa1ec9f819f2418040ffff7">Ciências Biológicas (Bach.)</option>
@@ -132,7 +134,12 @@ const Register = () =>{
                 <optgroup label='FACS'>
                 <option value="5fa20b3f819f241804100006">Medicina</option>
                 </optgroup>
-            </select>
+            </select></div>
+
+            
+            
+            )}
+            
 
 
 
