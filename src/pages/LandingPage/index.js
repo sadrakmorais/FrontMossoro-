@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import {  BackgroundI, Mossoro, Boxbottom} from './styles';
+import {  BackgroundI, Mossoro, ContainerBotton, Span} from './styles';
 import Button from '../../components/Button';
 
 
@@ -11,20 +11,14 @@ const LandingPage = () =>{
     return(
 
         <BackgroundI>
-            <Mossoro>
-                <h1>Mossoró+</h1>
-                <span>Encontre ou divulgue seu evento aqui</span>
+            <Mossoro><h1>MOSSORÓ+</h1>
+
             </Mossoro>
-
-            <Boxbottom>
-            <Button type='submit'>Login
-
-            </Button>
-            <Button type='submit'>Cadastrar
-
-            </Button>
-
-            </Boxbottom>
+            <Span>Encontre e divulgue seu evento aqui.</Span>
+            <ContainerBotton>
+                <Button type='submit'>Login</Button>
+                <Button type='submit'>Cadastrar</Button>
+            </ContainerBotton>
 
 
         </BackgroundI>

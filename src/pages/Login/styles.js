@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import img from '../../assets/backGround.png'
 
 export const Container = styled.main`
 	width: 100%;
@@ -6,7 +7,9 @@ export const Container = styled.main`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: #f1f1f1;
+	background-image: url('${img}');
+background-size: cover;
+background-position: center;
 `;
 
 export const FormContainer = styled.div`
