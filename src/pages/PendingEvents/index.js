@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import EventCard from '../../components/EventCard';
+import SolicitationEvent from '../../components/SolicitationEvent';
 import { Container, Header, CardContainer } from './styles';
-
 import { GET } from '../../services/api';
 
-const Home = () => {
-	const [loading, setLoading] = useState(true);
+
+
+const PendingEvents = () => {
+    const [loading, setLoading] = useState(true);
 	const [events, setEvents] = useState([]);
 
 	useEffect(() => {
 		const fetchEvents = async () => {
 			try {
-				const { data } = await GET('/events?isFinished=true');
+				const { data } = await GET('/events?isFinished=false');
 
 				setEvents(data.events);
 				setLoading(false);
@@ -33,12 +34,12 @@ const Home = () => {
 
 	return (
 		<Container>
-			<Header>Eventos Diponíveis</Header>
+			<Header>Solicitações de Eventos</Header>
 			<CardContainer>
 
 				<ul>
 					{events.map((event) => {
-						return <EventCard event={event} key={event._id}/>;
+						return <SolicitationEvent event={event} key={event._id}/>;
 					})}
 
 				</ul>
@@ -47,4 +48,5 @@ const Home = () => {
 	);
 };
 
-export default Home;
+
+export default PendingEvents;

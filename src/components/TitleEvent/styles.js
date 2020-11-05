@@ -6,6 +6,7 @@ export const Container = styled.div`
     align-items: flex-start;
     display: flex;
 
+
 `
 export const Titles = styled.div`
 display: flex;

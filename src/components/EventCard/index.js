@@ -13,7 +13,8 @@ import {
 	InfoContainer,
 	DataContainer,
 	VacationsContainer,
-	ContainerSubscribe
+    ContainerSubscribe,
+    ContainerDescription
 } from './styles';
 
 import { AuthContext } from '../../store/Auth';
@@ -34,7 +35,7 @@ const EventCard = ({ event }) => {
 
 	return (
 		<Container>
-			
+
 			<FormContainer>
 				<CapaEvent>
 					{
@@ -48,14 +49,14 @@ const EventCard = ({ event }) => {
 				</CapaEvent>
 				<InfoContainer>
 					<TitleEvent>{event.name}</TitleEvent>
-					<DescriptionEvent>{event.description}</DescriptionEvent>
+					<ContainerDescription><DescriptionEvent>{event.description}</DescriptionEvent></ContainerDescription>
 					<DataContainer>
 						<StartData>{new Date(event.period.start).toLocaleDateString()}</StartData>
 						<EndData>{new Date(event.period.end).toLocaleDateString()}</EndData>
-						<ContainerSubscribe><Button style={{ background: 'color: #3498DB;' }} onClick={handleSubscribe}>Inscrever-se</Button></ContainerSubscribe>
+						<ContainerSubscribe><Button style={{ background: ' #3498DB', width:'130%' }} onClick={handleSubscribe}>Inscrever-se</Button></ContainerSubscribe>
 						<VacationsContainer>
 							<VacationEvent>{event.vacancies}</VacationEvent>
-							
+
 						</VacationsContainer>
 					</DataContainer>
 				</InfoContainer>

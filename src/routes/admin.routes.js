@@ -5,6 +5,8 @@ import Events from '../pages/Events';
 import Layout from '../components/Layout';
 import SubmitEvents from '../pages/SubmitEvents'
 import Home from '../pages/Home'
+import PendingEvents from '../pages/PendingEvents'
+
 
 const authRoutes = ['/login', '/register'];
 
@@ -36,7 +38,7 @@ const ApplicationRoutes = () => {
 				</Route>
 				<Route exact path='/events/pending'>
 					<Layout>
-						<h1>Eventos Pendentes</h1>
+						<PendingEvents/>
 					</Layout>
 				</Route>
 

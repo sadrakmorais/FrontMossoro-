@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.p`
     width: 40%;
-    height:40%;
-    align-items: flex-start;
-    display: flex;
-
+    height:100%;
 	`

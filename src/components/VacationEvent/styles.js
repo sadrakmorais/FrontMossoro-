@@ -4,6 +4,7 @@ export const Container = styled.div`
 	display: flex;
 	padding: 2px;
 
+
 	border: 2px;
 `;
 export const VacationContainer = styled.div`
