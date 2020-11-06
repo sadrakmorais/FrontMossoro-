@@ -6,17 +6,22 @@ export const Container = styled.div`
 	display: flex;
 	align-items: flex-start;
 	justify-content: initial;
-	background: #f1f1f1;
+	background: white;
+    & > :hover{
+        border-radius: 4px;
+	box-shadow: 0px 2px 3px 1px rgba(100, 100, 100, 0.3);
+    }
 `;
 export const FormContainer = styled.div`
-	border-radius: 4px;
-	box-shadow: 0px 2px 3px 1px rgba(100, 100, 100, 0.3);
+
 	width: 100%;
 	align-items: flex-start;
 	padding: 10px;
 	display: flex;
 	margin: 3px;
-	background: white;
+    background: white;
+
+
 
 	& > h1 {
 		font-size: 28px;
@@ -28,7 +33,13 @@ export const FormContainer = styled.div`
 		width: 100%;
 	}
 `;
+export const CapaContainer = styled.div `
+height: 100%;
+width:50%;
+max-height:500px;
 
+
+`
 export const InfoContainer = styled.div`
 	height: 20%;
 	width: 100%;

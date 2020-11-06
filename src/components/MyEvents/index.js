@@ -7,7 +7,7 @@ import VacationEvent from '../VacationEvent';
 import DescriptionEvent from '../DescriptionEvent';
 import LocalizationEvent from '../Localization';
 
-import Button from '../Button';
+
 
 import {
 	Container,
@@ -17,7 +17,8 @@ import {
 	VacationsContainer,
 	ContainerSubscribe,
 	ContainerDescription,
-	ContainerLocation,
+    ContainerLocation,
+    CapaContainer,
 } from './styles';
 
 
@@ -27,18 +28,17 @@ const MyEvents = ({ event }) => {
     return (
 		<Container>
 			<FormContainer>
-				<CapaEvent>
-					{
-						<a href='https://images.sympla.com.br/5f96f4d174434.png' target='_blank'>
-							<img
-								src={event.photo}
-								alt='capa do evento'
-								width='100%'
-								height='100%'
-							/>
-						</a>
-					}
-				</CapaEvent>
+				<CapaContainer>
+					<CapaEvent >
+						{
+							<a
+								href='https://images.sympla.com.br/5f96f4d174434.png'
+								target='_blank'>
+								<img src={event.photo} alt='capa' width='100%' height='100%'/>
+							</a>
+						}
+					</CapaEvent>
+				</CapaContainer>
 				<InfoContainer>
 					<TitleEvent>{event.name}</TitleEvent>
 					<ContainerDescription>
@@ -51,7 +51,9 @@ const MyEvents = ({ event }) => {
 					<DataContainer>
 						<StartData>{new Date(event.period.start).toLocaleDateString()}</StartData>
 						<EndData>{new Date(event.period.end).toLocaleDateString()}</EndData>
-						<ContainerSubscribe></ContainerSubscribe>
+						<ContainerSubscribe>
+
+						</ContainerSubscribe>
 						<VacationsContainer>
 							<VacationEvent>{event.vacancies}</VacationEvent>
 						</VacationsContainer>

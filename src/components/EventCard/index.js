@@ -18,6 +18,7 @@ import {
 	ContainerSubscribe,
 	ContainerDescription,
 	ContainerLocation,
+	CapaContainer,
 } from './styles';
 
 import { AuthContext } from '../../store/Auth';
@@ -39,18 +40,17 @@ const EventCard = ({ event }) => {
 	return (
 		<Container>
 			<FormContainer>
-				<CapaEvent>
-					{
-						<a href='https://images.sympla.com.br/5f96f4d174434.png' target="_blank">
-							<img
-								src={event.photo}
-								alt='capa do evento'
-								width='100%'
-								height='100%'
-							/>
-						</a>
-					}
-				</CapaEvent>
+				<CapaContainer>
+					<CapaEvent>
+						{
+							<a
+								href='https://images.sympla.com.br/5f96f4d174434.png'
+								target='_blank'>
+								<img src={event.photo} alt='capa do evento' width='100%' />
+							</a>
+						}
+					</CapaEvent>
+				</CapaContainer>
 				<InfoContainer>
 					<TitleEvent>{event.name}</TitleEvent>
 					<ContainerDescription>
