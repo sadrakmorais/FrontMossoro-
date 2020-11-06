@@ -12,7 +12,7 @@ const PendingEvents = () => {
 	useEffect(() => {
 		const fetchEvents = async () => {
 			try {
-				const { data } = await GET('/events?isFinished=false');
+				const { data } = await GET('/events?isAccepted=false');
 
 				setEvents(data.events);
 				setLoading(false);

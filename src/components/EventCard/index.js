@@ -5,6 +5,8 @@ import EndData from '../DataEvent/EndData';
 import StartData from '../DataEvent/StartData';
 import VacationEvent from '../VacationEvent';
 import DescriptionEvent from '../DescriptionEvent';
+import LocalizationEvent from '../Localization';
+
 import Button from '../Button';
 
 import {
@@ -14,7 +16,8 @@ import {
 	DataContainer,
 	VacationsContainer,
     ContainerSubscribe,
-    ContainerDescription
+    ContainerDescription,
+    ContainerLocation,
 } from './styles';
 
 import { AuthContext } from '../../store/Auth';
@@ -50,10 +53,14 @@ const EventCard = ({ event }) => {
 				<InfoContainer>
 					<TitleEvent>{event.name}</TitleEvent>
 					<ContainerDescription><DescriptionEvent>{event.description}</DescriptionEvent></ContainerDescription>
+                    <ContainerLocation>
+                    <span>Local:</span>
+                    <LocalizationEvent>{event.location}</LocalizationEvent>
+                    </ContainerLocation>
 					<DataContainer>
 						<StartData>{new Date(event.period.start).toLocaleDateString()}</StartData>
 						<EndData>{new Date(event.period.end).toLocaleDateString()}</EndData>
-						<ContainerSubscribe><Button style={{ background: ' #3498DB', width:'130%' }} onClick={handleSubscribe}>Inscrever-se</Button></ContainerSubscribe>
+						<ContainerSubscribe><Button style={{ background: ' #3498DB', width:'150px' }} onClick={handleSubscribe}>Inscrever-se</Button></ContainerSubscribe>
 						<VacationsContainer>
 							<VacationEvent>{event.vacancies}</VacationEvent>
 

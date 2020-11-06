@@ -11,7 +11,7 @@ const Home = () => {
 	useEffect(() => {
 		const fetchEvents = async () => {
 			try {
-				const { data } = await GET('/events?isFinished=true');
+				const { data } = await GET('/events?isAccepted=true');
 
 				setEvents(data.events);
 				setLoading(false);

@@ -14,13 +14,11 @@ const LandingPage = () =>{
     return(
 
         <BackgroundI>
-            <Mossoro><h1>MOSSORÓ+</h1>
-
-            </Mossoro>
+            <Mossoro><h1>MOSSORÓ+</h1></Mossoro>
             <Span>Encontre e divulgue seu evento aqui.</Span>
             <ContainerBotton>
-            <Link to='/login'><Button>Login</Button></Link>
-                <Link to='/register'><Button>Cadastrar</Button></Link>
+            <Link to='/login'><Button style={{ background: ' #3498DB', width: '300%' }}>Login</Button></Link>
+            <Link to='/register'><Button style={{ background: ' #00FA9A', width: '250%' }}>Cadastrar</Button></Link>
             </ContainerBotton>
 
 

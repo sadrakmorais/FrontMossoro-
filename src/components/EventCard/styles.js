@@ -52,6 +52,7 @@ justify-content:space-around;
 export const VacationsContainer = styled.div`
 display: flex;
 width: 50%;
+padding-top:1%;
 
 
 padding-left:20%;
@@ -61,15 +62,25 @@ export const ContainerSubscribe = styled.div`
 padding-left:10%;
 padding-top:2px;
 margin-top:1px;
+display:flex;
+
 
 
 `
 export const ContainerDescription = styled.div`
 width: 100%;
-height:160px;
+height:100px;
 border-radius: 1px;
 word-wrap: break-word;
 box-shadow: 0px 1px 1px 1px rgba(100, 100, 100, 0.2);
 background:white;
+
+`
+export const ContainerLocation = styled.div`
+padding: 2px;
+width: 100%;
+height:30px;
+display:flex;
+word-wrap: break-word;
 
 `

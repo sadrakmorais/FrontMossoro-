@@ -81,9 +81,6 @@ padding: 2px;
 width: 100%;
 height:30px;
 display:flex;
-border-radius: 1px;
 word-wrap: break-word;
-box-shadow: 0px 1px 1px 1px rgba(100, 100, 100, 0.2);
-
 
 `
