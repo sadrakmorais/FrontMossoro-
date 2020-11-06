@@ -20,28 +20,16 @@ import {
 	ContainerLocation,
 } from './styles';
 
-import { AuthContext } from '../../store/Auth';
 
-const EventCard = ({ event }) => {
-	const { user } = useContext(AuthContext); // user é quem ta logado
 
-	const handleSubscribe = async () => {
-		try {
-			const idDeQuemTaLogado = user._id;
-			const idDoEvento = event._id;
+const MyEvents = ({ event }) => {
 
-			return console.log({ idDeQuemTaLogado, idDoEvento });
-		} catch (error) {
-			console.log(error);
-		}
-	};
-
-	return (
+    return (
 		<Container>
 			<FormContainer>
 				<CapaEvent>
 					{
-						<a href='https://images.sympla.com.br/5f96f4d174434.png' target="_blank">
+						<a href='https://images.sympla.com.br/5f96f4d174434.png' target='_blank'>
 							<img
 								src={event.photo}
 								alt='capa do evento'
@@ -63,13 +51,7 @@ const EventCard = ({ event }) => {
 					<DataContainer>
 						<StartData>{new Date(event.period.start).toLocaleDateString()}</StartData>
 						<EndData>{new Date(event.period.end).toLocaleDateString()}</EndData>
-						<ContainerSubscribe>
-							<Button
-								style={{ background: ' #3498DB', width: '150px' }}
-								onClick={handleSubscribe}>
-								Inscrever-se
-							</Button>
-						</ContainerSubscribe>
+						<ContainerSubscribe></ContainerSubscribe>
 						<VacationsContainer>
 							<VacationEvent>{event.vacancies}</VacationEvent>
 						</VacationsContainer>
@@ -80,4 +62,4 @@ const EventCard = ({ event }) => {
 	);
 };
 
-export default EventCard;
+export default MyEvents;
