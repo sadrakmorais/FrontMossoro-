@@ -44,9 +44,9 @@ const EventCard = ({ event }) => {
 					<CapaEvent>
 						{
 							<a
-								href='https://images.sympla.com.br/5f96f4d174434.png'
+								href={event.photo}
 								target='_blank'>
-								<img src={event.photo} alt='capa do evento' width='100%' />
+								<img src={event.photo} alt='capa do evento' style={{width:'100%',height:'22vh'}} />
 							</a>
 						}
 					</CapaEvent>

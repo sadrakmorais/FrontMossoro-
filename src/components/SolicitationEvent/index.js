@@ -44,10 +44,10 @@ const SolicitationEvent = ({event}) => {
 					<CapaEvent>
 						{
 							<a
-								href='https://images.sympla.com.br/5f96f4d174434.png'
-								target='_blank'>
-								<img src={event.photo} alt='capa' width='100%' height='100%' />
-							</a>
+                            href={event.photo}
+                            target='_blank'>
+                            <img src={event.photo} alt='capa do evento' style={{width:'100%',height:'25vh'}} />
+                        </a>
 						}
 					</CapaEvent>
 				</CapaContainer>

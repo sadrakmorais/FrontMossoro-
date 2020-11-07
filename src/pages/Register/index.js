@@ -136,10 +136,10 @@ const Register = () =>{
                 </optgroup>
             </select></div>
 
-            
-            
+
+
             )}
-            
+
 
 
 

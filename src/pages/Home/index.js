@@ -38,11 +38,16 @@ const Home = () => {
 
 				<ul>
 					{events.map((event) => {
-						return <EventCard event={event} key={event._id}/>;
+						return <EventCard event={event} key={event._id} />;
 					})}
 
+            <br/>
+            <br/>
+            <br/>
 				</ul>
+
 			</CardContainer>
+
 		</Container>
 	);
 };

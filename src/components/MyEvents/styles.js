@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    margin-bottom: 10px;
 	width: 100%;
 	height: 100%;
 	display: flex;
 	align-items: flex-start;
 	justify-content: initial;
 	background: white;
-	& > :hover {
-		border-radius: 4px;
-		box-shadow: 0px 2px 3px 1px rgba(100, 100, 100, 0.3);
+	&:hover {
+		box-shadow: 0px 1px 2px 3px rgba(0, 0, 139, 0.2);;
 	}
 `;
 export const FormContainer = styled.div`

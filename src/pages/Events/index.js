@@ -32,7 +32,7 @@ const Events = () => {
 
 	return (
 		<Container>
-			<Header>Meus Eventos</Header>
+			<Header>Minhas inscrições</Header>
 			<CardContainer>
 
 				<ul>

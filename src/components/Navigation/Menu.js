@@ -19,7 +19,7 @@ const Menu = () => {
 						<Link to='/home'>Início</Link>
 					</MenuLink>
 					<MenuLink active={pathname === '/events'}>
-						<Link to='/events'>Eventos</Link>
+						<Link to='/events'>Inscrições</Link>
 					</MenuLink>
 					<MenuLink active={pathname === '/events/submit'}>
 						<Link to='/events/submit'>Submeter Evento</Link>
@@ -40,7 +40,7 @@ const Menu = () => {
 					<Link to='/home'>Início</Link>
 				</MenuLink>
 				<MenuLink active={pathname === '/events'}>
-					<Link to='/events'>Eventos</Link>
+					<Link to='/events'>Inscrições</Link>
 				</MenuLink>
 				<MenuLink active={pathname === '/events/events'}>
 					<Link to='/events/events'>Submeter Evento</Link>
