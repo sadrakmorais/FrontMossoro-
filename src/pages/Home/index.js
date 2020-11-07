@@ -41,9 +41,6 @@ const Home = () => {
 						return <EventCard event={event} key={event._id} />;
 					})}
 
-            <br/>
-            <br/>
-            <br/>
 				</ul>
 
 			</CardContainer>

@@ -6,7 +6,7 @@ import StartData from '../DataEvent/StartData';
 import VacationEvent from '../VacationEvent';
 import DescriptionEvent from '../DescriptionEvent';
 import LocalizationEvent from '../Localization';
-
+import { POST } from '../../services/api';
 import Button from '../Button';
 
 import {
@@ -28,12 +28,25 @@ const EventCard = ({ event }) => {
 
 	const handleSubscribe = async () => {
 		try {
-			const idDeQuemTaLogado = user._id;
-			const idDoEvento = event._id;
-
-			return console.log({ idDeQuemTaLogado, idDoEvento });
+			const iddoevento = event._id;
+			const iddouser = user._id;
+			const payload = { user: user._id, event: event._id };
+			await POST('/subscriptions', payload);
+			console.log({ iddoevento, iddouser });
+			alert('Inscrição Realizada');
 		} catch (error) {
 			console.log(error);
+			const { status } = error.response;
+
+			switch (status) {
+				case 409:
+					return alert('Você já está Inscrito neste evento!');
+				case 404:
+					return alert('O evento não está mais disponível!');
+
+				default:
+					return alert('API deu o prego');
+			}
 		}
 	};
 
@@ -43,10 +56,12 @@ const EventCard = ({ event }) => {
 				<CapaContainer>
 					<CapaEvent>
 						{
-							<a
-								href={event.photo}
-								target='_blank'>
-								<img src={event.photo} alt='capa do evento' style={{width:'100%',height:'22vh'}} />
+							<a href={event.photo} target='_blank'>
+								<img
+									src={event.photo}
+									alt='capa do evento'
+									style={{ width: '100%', height: '22vh' }}
+								/>
 							</a>
 						}
 					</CapaEvent>

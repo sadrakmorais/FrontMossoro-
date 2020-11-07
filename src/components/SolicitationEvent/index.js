@@ -31,7 +31,7 @@ const SolicitationEvent = ({event}) => {
 			const {
 				data: { event :  newEvent},
             } = await PATCH(`/events/${event._id}`, payload);
-            alert('Avento Aceito')
+            alert('Evento Aceito')
 		} catch (error) {
 			console.log(error);
 		}
