@@ -10,7 +10,7 @@ const Events = () => {
 	useEffect(() => {
 		const fetchEvents = async () => {
 			try {
-				const { data } = await GET('/events?isAccepted=true');
+				const { data } = await GET('/subscriptions');
 
 				setEvents(data.events);
 				setLoading(false);

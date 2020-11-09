@@ -46,6 +46,7 @@ export const DataContainer = styled.footer`
 	display: flex;
 	margin-top: 5px;
 	width: 100%;
+    height:100;
 	justify-content: space-around;
 `;
 export const VacationsContainer = styled.div`

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { PATCH } from '../../services/api';
+import { PATCH, DELETE } from '../../services/api';
 import CapaEvent from '../CapaEvent';
 import TitleEvent from '../TitleEvent';
 import EndData from '../DataEvent/EndData';
@@ -21,6 +21,7 @@ import {
 	ContainerDescription,
     ContainerLocation,
     CapaContainer,
+    FooterCointainer,
 } from './styles';
 
 const SolicitationEvent = ({event}) => {
@@ -32,6 +33,18 @@ const SolicitationEvent = ({event}) => {
 				data: { event :  newEvent},
             } = await PATCH(`/events/${event._id}`, payload);
             alert('Evento Aceito')
+		} catch (error) {
+			console.log(error);
+		}
+    };
+
+    const handleDeleteEvent = async () => {
+		try {
+
+			const {
+				data: { event :  newEvent},
+            } = await DELETE(`/events/${event._id}`);
+            alert('Evento Recusado')
 		} catch (error) {
 			console.log(error);
 		}
@@ -60,20 +73,29 @@ const SolicitationEvent = ({event}) => {
 						<span>Local:</span>
 						<LocalizationEvent>{event.location}</LocalizationEvent>
 					</ContainerLocation>
+                    <FooterCointainer>
 					<DataContainer>
 						<StartData>{new Date(event.period.start).toLocaleDateString()}</StartData>
 						<EndData>{new Date(event.period.end).toLocaleDateString()}</EndData>
-						<ContainerSubscribe>
+
+					</DataContainer>
+                    <ContainerSubscribe>
 							<Button
 								style={{ background: ' #3498DB', width: '130%', }}
 								onClick={handleAcceptEvent}>
 								Aprovar Evento
 							</Button>
+
+                            <Button
+								style={{ background: ' #FF0000', width: '60%', }}
+								onClick={handleDeleteEvent}>
+								X
+							</Button>
 						</ContainerSubscribe>
 						<VacationsContainer>
 							<VacationEvent>{event.vacancies}</VacationEvent>
 						</VacationsContainer>
-					</DataContainer>
+                    </FooterCointainer>
 				</InfoContainer>
 			</FormContainer>
 		</Container>

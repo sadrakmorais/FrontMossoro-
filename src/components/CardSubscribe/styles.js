@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	width: 100%;
 	height: 100%;
 	display: flex;
 	align-items: flex-start;
-	justify-content: initial;
+	justify-content: space-around;
 	background: white;
 	&:hover {
 		box-shadow: 0px 1px 2px 3px rgba(0, 0, 139, 0.2);
@@ -15,7 +15,7 @@ export const Container = styled.div`
 export const FormContainer = styled.div`
 	width: 100%;
 	align-items: flex-start;
-	padding: 5px;
+	padding: 10px;
 	display: flex;
 	margin: 3px;
 	background: white;
@@ -33,7 +33,6 @@ export const FormContainer = styled.div`
 export const CapaContainer = styled.div`
 	height: 100%;
 	width: 50%;
-	max-height: 500px;
 `;
 export const InfoContainer = styled.div`
 	height: 20%;
@@ -42,6 +41,21 @@ export const InfoContainer = styled.div`
 	display: inline;
 	background: white;
 `;
+
+export const DataContainer = styled.footer`
+	display: flex;
+	margin-top: 5px;
+	width: 100%;
+	justify-content: space-around;
+`;
+export const VacationsContainer = styled.div`
+	display: flex;
+	width: 50%;
+	padding-top: 1%;
+
+	padding-left: 20%;
+`;
+
 export const ContainerDescription = styled.div`
 	width: 100%;
 	height: 100px;
@@ -60,37 +74,3 @@ export const ContainerLocation = styled.div`
 	display: flex;
 	word-wrap: break-word;
 `;
-
-export const FooterCointainer = styled.div`
-	width: 100%;
-
-	margin-top: 2%;
-	display: flex;
-
-    align-content:space-around;
-`;
-export const DataContainer = styled.div`
-	display: flex;
-    height:90%;
-`;
-
-export const ContainerSubscribe = styled.div`
-	padding-top: 2px;
-    height:90%;
-	margin-top: 1px;
-	margin-left: 20%;
-	width: 200px;
-	display: flex;
-
-
-`;
-
-export const VacationsContainer = styled.div`
-	display: flex;
-    margin-left:60px;
-    width:100px;
-	align-items:flex-end;
-	padding-top: 1%;
-
-`;
-
