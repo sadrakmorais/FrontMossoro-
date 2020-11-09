@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-
 	display: flex;
 	padding: 2px;
 	height: 100%;
@@ -9,7 +8,7 @@ export const Container = styled.div`
 export const VacationContainer = styled.div`
 	font-size: 18px;
 	font-weight: 700;
-color: white;
+	color: white;
 	border: 1px solid;
 	border-radius: 5px;
 	padding: 1px;

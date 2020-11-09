@@ -7,8 +7,6 @@ import VacationEvent from '../VacationEvent';
 import DescriptionEvent from '../DescriptionEvent';
 import LocalizationEvent from '../Localization';
 
-
-
 import {
 	Container,
 	FormContainer,
@@ -17,25 +15,24 @@ import {
 	VacationsContainer,
 	ContainerSubscribe,
 	ContainerDescription,
-    ContainerLocation,
-    CapaContainer,
+	ContainerLocation,
+	CapaContainer,
 } from './styles';
 
-
-
 const MyEvents = ({ event }) => {
-
-    return (
+	return (
 		<Container>
 			<FormContainer>
 				<CapaContainer>
-					<CapaEvent >
+					<CapaEvent>
 						{
-							<a
-                            href={event.photo}
-                            target='_blank'>
-                            <img src={event.photo} alt='capa do evento' style={{width:'100%',height:'25vh'}} />
-                        </a>
+							<a href={event.photo} target='_blank'>
+								<img
+									src={event.photo}
+									alt='capa do evento'
+									style={{ width: '100%', height: '25vh' }}
+								/>
+							</a>
 						}
 					</CapaEvent>
 				</CapaContainer>
@@ -51,9 +48,7 @@ const MyEvents = ({ event }) => {
 					<DataContainer>
 						<StartData>{new Date(event.period.start).toLocaleDateString()}</StartData>
 						<EndData>{new Date(event.period.end).toLocaleDateString()}</EndData>
-						<ContainerSubscribe>
-
-						</ContainerSubscribe>
+						<ContainerSubscribe></ContainerSubscribe>
 						<VacationsContainer>
 							<VacationEvent>{event.vacancies}</VacationEvent>
 						</VacationsContainer>

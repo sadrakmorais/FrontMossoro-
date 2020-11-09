@@ -87,7 +87,7 @@ const SolicitationEvent = ({event}) => {
 							</Button>
 
                             <Button
-								style={{ background: ' #FF0000', width: '60%', }}
+								style={{ background: ' #FF0000', width: '60%', marginLeft:'15px' }}
 								onClick={handleDeleteEvent}>
 								X
 							</Button>
