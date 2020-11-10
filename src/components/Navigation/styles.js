@@ -56,7 +56,7 @@ export const Exit = styled.button`
 	flex: 1;
 	border-radius: 4px;
 	background: none;
-    font-weight: 500;
+	font-weight: 500;
 
 	&:hover {
 		background: #ccc;

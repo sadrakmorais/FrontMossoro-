@@ -41,8 +41,8 @@ const EventCard = ({ event }) => {
 			switch (status) {
 				case 409:
 					return alert('Você já está Inscrito neste evento!');
-				case 404:
-					return alert('O evento não está mais disponível!');
+				case 400:
+					return alert('Evento ja iniciado ou finalizado!');
 
 				default:
 					return alert('API deu o prego');

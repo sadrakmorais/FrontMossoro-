@@ -26,9 +26,9 @@ const MyEvents = ({ event }) => {
 				<CapaContainer>
 					<CapaEvent>
 						{
-							<a href={event.photo} target='_blank'>
+							<a href={event.event.photo} target='_blank'>
 								<img
-									src={event.photo}
+									src={event.event.photo}
 									alt='capa do evento'
 									style={{ width: '100%', height: '25vh' }}
 								/>
@@ -37,20 +37,20 @@ const MyEvents = ({ event }) => {
 					</CapaEvent>
 				</CapaContainer>
 				<InfoContainer>
-					<TitleEvent>{event.name}</TitleEvent>
+					<TitleEvent>{event.event.name}</TitleEvent>
 					<ContainerDescription>
-						<DescriptionEvent>{event.description}</DescriptionEvent>
+						<DescriptionEvent>{event.event.description}</DescriptionEvent>
 					</ContainerDescription>
 					<ContainerLocation>
 						<span>Local:</span>
-						<LocalizationEvent>{event.location}</LocalizationEvent>
+						<LocalizationEvent>{event.event.location}</LocalizationEvent>
 					</ContainerLocation>
 					<DataContainer>
-						<StartData>{new Date(event.period.start).toLocaleDateString()}</StartData>
-						<EndData>{new Date(event.period.end).toLocaleDateString()}</EndData>
+						<StartData>{new Date(event.event.period.start).toLocaleDateString()}</StartData>
+						<EndData>{new Date(event.event.period.end).toLocaleDateString()}</EndData>
 						<ContainerSubscribe></ContainerSubscribe>
 						<VacationsContainer>
-							<VacationEvent>{event.vacancies}</VacationEvent>
+							<VacationEvent>{event.event.vacancies}</VacationEvent>
 						</VacationsContainer>
 					</DataContainer>
 				</InfoContainer>

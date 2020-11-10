@@ -85,7 +85,7 @@ const SubmitEvents = () => {
 	return (
 		<Container>
 			<FormContainer>
-				<h1>INFORMAÇÕES DO EVENTO</h1>
+				<h1>Solicitar Evento</h1>
 				<Form onSubmit={HandleSubmitEvent}>
 					<Input
 						label='Nome do Evento'
