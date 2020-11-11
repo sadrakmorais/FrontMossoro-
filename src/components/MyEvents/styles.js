@@ -5,6 +5,7 @@ export const Container = styled.div`
 	width: 100%;
 	height: 100%;
 	display: flex;
+    border-radius: 4px;
 	align-items: flex-start;
 	justify-content: initial;
 	background: white;
@@ -32,7 +33,7 @@ export const FormContainer = styled.div`
 `;
 export const CapaContainer = styled.div`
 	height: 100%;
-	width: 50%;
+	width: 30%;
 	max-height: 500px;
 `;
 export const InfoContainer = styled.div`

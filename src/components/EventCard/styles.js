@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     margin-bottom: 10px;
+    border-radius: 4px;
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -32,7 +33,7 @@ export const FormContainer = styled.div`
 `;
 export const CapaContainer = styled.div`
 	height: 100%;
-	width: 50%;
+	width: 30%;
 	max-height: 500px;
 `;
 export const InfoContainer = styled.div`
