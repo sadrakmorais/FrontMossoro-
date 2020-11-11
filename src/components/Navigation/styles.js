@@ -2,11 +2,12 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.aside`
 	flex: 0.2;
-	background: #fff;
+	background: linear-gradient(329.54deg, #20b6d1 0%, #00c7c7 100%);
 	height: 100%;
 	padding: 26px;
 	border-right: 1px solid #ccc;
 	display: flex;
+    text-align:center;
 	flex-direction: column;
 	position: relative;
 `;

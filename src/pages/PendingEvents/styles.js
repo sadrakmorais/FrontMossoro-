@@ -13,7 +13,7 @@ export const CardContainer = styled.div`
 	box-shadow: 0px 2px 3px 1px rgba(100, 100, 100, 0.3);
 	width: 100%;
 	padding: 10px;
-	background: #ffffff;
+	background: #e5ffff;
 
 	& > h1 {
 		font-size: 28px;

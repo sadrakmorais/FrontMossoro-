@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 	width: 100%;
 	height: 100%;
 	display: flex;
 	align-items: flex-start;
-	justify-content: space-around;
+	justify-content: initial;
 	background: white;
 	&:hover {
-		box-shadow: 0px 1px 2px 3px rgba(0, 0, 139, 0.2);
+		box-shadow: 0px 1px 2px 3px rgba(0, 0, 139, 0.2);;
 	}
 `;
 export const FormContainer = styled.div`
@@ -33,6 +33,7 @@ export const FormContainer = styled.div`
 export const CapaContainer = styled.div`
 	height: 100%;
 	width: 50%;
+	max-height: 500px;
 `;
 export const InfoContainer = styled.div`
 	height: 20%;
@@ -46,7 +47,6 @@ export const DataContainer = styled.footer`
 	display: flex;
 	margin-top: 5px;
 	width: 100%;
-    height:100;
 	justify-content: space-around;
 `;
 export const VacationsContainer = styled.div`

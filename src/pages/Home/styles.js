@@ -2,20 +2,19 @@ import styled from 'styled-components';
 
 export const Container = styled.main`
 	background: linear-gradient(329.54deg, #cfcfcf 0%, white 100%);
-
+	background: #ccffff;
 	min-height: 100vh;
 	display: inline;
 	align-items: flex-start;
 `;
 
 export const CardContainer = styled.div`
-
 	border-radius: 4px;
 	box-shadow: 0px 2px 3px 1px rgba(100, 100, 100, 0.3);
 	width: 100%;
-    justify-content:space-around;
+	justify-content: space-around;
 	padding: 24px;
-	background: #ffffff;
+	background: #e5ffff;
 
 	& > h1 {
 		font-size: 28px;

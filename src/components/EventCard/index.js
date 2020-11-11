@@ -60,7 +60,7 @@ const EventCard = ({ event }) => {
 								<img
 									src={event.photo}
 									alt='capa do evento'
-									style={{ width: '100%', height: '22vh' }}
+									style={{ width: '100%', height: '25vh' }}
 								/>
 							</a>
 						}
