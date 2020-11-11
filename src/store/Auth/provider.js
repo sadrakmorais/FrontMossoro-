@@ -26,7 +26,7 @@ const AuthProvider = ({ children }) => {
 		storage.setItem('@USER', JSON.stringify(user));
 
 		setUser(user);
-		window.location.href = '/home';
+		window.location.href = '/';
 	};
 
 	const signOut = () => {
@@ -35,7 +35,7 @@ const AuthProvider = ({ children }) => {
 		localStorage.clear();
 		sessionStorage.clear();
 
-		window.location.href = '/login';
+		window.location.href = '/';
 	};
 
 	return (

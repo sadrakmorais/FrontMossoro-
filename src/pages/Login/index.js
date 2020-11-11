@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
-import Axios from 'axios';
 import * as Yup from 'yup';
+import { GET,POST } from '../../services/api';
 
 import Button from '../../components/Button';
 import Form from '../../components/Form';
@@ -28,14 +28,14 @@ const Login = () => {
 
 				if (authToken) {
 					const headers = { authorization: `Bearer ${authToken}` };
-					const response = await Axios.get('http://localhost:3000/api/v1/auth', {
+					const response = await GET('/auth', {
 						headers,
 					});
 
 					const isAuthenticated = response.status === 200 ? true : false;
 
 					if (isAuthenticated) {
-						return (window.location = '/events');
+						return (window.location = '/');
 					}
 				}
 			} catch (error) {
@@ -51,7 +51,7 @@ const Login = () => {
 			e.preventDefault();
 
 			const payload = { email, cpf, password };
-			const { data } = await Axios.post('http://localhost:3000/api/v1/auth', payload);
+			const { data } = await POST('/auth', payload);
 
 			const validationSchema = Yup.object().shape({
 				email: Yup.string().required(),
