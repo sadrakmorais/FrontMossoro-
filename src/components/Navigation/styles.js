@@ -7,7 +7,7 @@ export const Container = styled.aside`
 	padding: 26px;
 	border-right: 1px solid #ccc;
 	display: flex;
-    text-align:center;
+	text-align: center;
 	flex-direction: column;
 	position: relative;
 `;

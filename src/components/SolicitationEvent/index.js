@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import { PATCH, DELETE } from '../../services/api';
 import CapaEvent from '../CapaEvent';
 import TitleEvent from '../TitleEvent';
@@ -19,32 +18,30 @@ import {
 	VacationsContainer,
 	ContainerSubscribe,
 	ContainerDescription,
-    ContainerLocation,
-    CapaContainer,
-    FooterCointainer,
+	ContainerLocation,
+	CapaContainer,
+	FooterCointainer,
 } from './styles';
 
-const SolicitationEvent = ({event}) => {
-
+const SolicitationEvent = ({ event }) => {
 	const handleAcceptEvent = async () => {
 		try {
 			const payload = { isAccepted: true };
 			const {
-				data: { event :  newEvent},
-            } = await PATCH(`/events/${event._id}`, payload);
-            alert('Evento Aceito')
+				data: { event: newEvent },
+			} = await PATCH(`/events/${event._id}`, payload);
+			alert('Evento Aceito');
 		} catch (error) {
 			console.log(error);
 		}
-    };
+	};
 
-    const handleDeleteEvent = async () => {
+	const handleDeleteEvent = async () => {
 		try {
-
 			const {
-				data: { event :  newEvent},
-            } = await DELETE(`/events/${event._id}`);
-            alert('Evento Recusado')
+				data: { event: newEvent },
+			} = await DELETE(`/events/${event._id}`);
+			alert('Evento Recusado');
 		} catch (error) {
 			console.log(error);
 		}
@@ -52,15 +49,17 @@ const SolicitationEvent = ({event}) => {
 
 	return (
 		<Container>
-			<FormContainer >
-            <CapaContainer>
+			<FormContainer>
+				<CapaContainer>
 					<CapaEvent>
 						{
-							<a
-                            href={event.photo}
-                            target='_blank'>
-                            <img src={event.photo} alt='capa do evento' style={{width:'100%',height:'25vh'}} />
-                        </a>
+							<a href={event.photo} target='_blank'>
+								<img
+									src={event.photo}
+									alt='capa do evento'
+									style={{ width: '100%', height: '25vh' }}
+								/>
+							</a>
 						}
 					</CapaEvent>
 				</CapaContainer>
@@ -73,21 +72,22 @@ const SolicitationEvent = ({event}) => {
 						<span>Local:</span>
 						<LocalizationEvent>{event.location}</LocalizationEvent>
 					</ContainerLocation>
-                    <FooterCointainer>
-					<DataContainer>
-						<StartData>{new Date(event.period.start).toLocaleDateString()}</StartData>
-						<EndData>{new Date(event.period.end).toLocaleDateString()}</EndData>
-
-					</DataContainer>
-                    <ContainerSubscribe>
+					<FooterCointainer>
+						<DataContainer>
+							<StartData>
+								{new Date(event.period.start).toLocaleDateString()}
+							</StartData>
+							<EndData>{new Date(event.period.end).toLocaleDateString()}</EndData>
+						</DataContainer>
+						<ContainerSubscribe>
 							<Button
-								style={{ background: ' #3498DB', width: '130%', }}
+								style={{ background: ' #3498DB', width: '130%' }}
 								onClick={handleAcceptEvent}>
 								Aprovar Evento
 							</Button>
 
-                            <Button
-								style={{ background: ' #FF0000', width: '60%', marginLeft:'15px' }}
+							<Button
+								style={{ background: ' #FF0000', width: '60%', marginLeft: '15px' }}
 								onClick={handleDeleteEvent}>
 								X
 							</Button>
@@ -95,7 +95,7 @@ const SolicitationEvent = ({event}) => {
 						<VacationsContainer>
 							<VacationEvent>{event.vacancies}</VacationEvent>
 						</VacationsContainer>
-                    </FooterCointainer>
+					</FooterCointainer>
 				</InfoContainer>
 			</FormContainer>
 		</Container>

@@ -28,29 +28,32 @@ const Menu = () => {
 						<Link to='/events/pending'>Eventos Pendentes</Link>
 					</MenuLink>
 				</ul>
-				<Exit onClick={signOut} exit>Sair</Exit>
+				<Exit onClick={signOut} exit>
+					Sair
+				</Exit>
 			</Container>
 		);
-    }
-    if (user.level === null){
-        return (
-		<Container>
-			<ul>
-				<MenuLink active={pathname === '/home'}>
-					<Link to='/home'>Início</Link>
-				</MenuLink>
-				<MenuLink active={pathname === '/events'}>
-					<Link to='/events'>Inscrições</Link>
-				</MenuLink>
-				<MenuLink active={pathname === '/events/submit'}>
-					<Link to='/events/events'>Submeter Evento</Link>
-				</MenuLink>
-			</ul>
-			<Exit onClick={signOut} exit>Sair</Exit>
-		</Container>
-	);
-
-    }
+	}
+	if (user.level === null) {
+		return (
+			<Container>
+				<ul>
+					<MenuLink active={pathname === '/home'}>
+						<Link to='/home'>Início</Link>
+					</MenuLink>
+					<MenuLink active={pathname === '/events'}>
+						<Link to='/events'>Inscrições</Link>
+					</MenuLink>
+					<MenuLink active={pathname === '/events/submit'}>
+						<Link to='/events/events'>Submeter Evento</Link>
+					</MenuLink>
+				</ul>
+				<Exit onClick={signOut} exit>
+					Sair
+				</Exit>
+			</Container>
+		);
+	}
 
 	/** usuário comum */
 	return (
@@ -66,7 +69,9 @@ const Menu = () => {
 					<Link to='/events/submit'>Submeter Evento</Link>
 				</MenuLink>
 			</ul>
-			<Exit onClick={signOut} exit>Sair</Exit>
+			<Exit onClick={signOut} exit>
+				Sair
+			</Exit>
 		</Container>
 	);
 };

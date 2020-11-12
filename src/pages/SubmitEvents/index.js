@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as Yup from 'yup';
 
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 
 import Form from '../../components/Form';
 import Button from '../../components/Button';
@@ -11,7 +11,7 @@ import { Container, FormContainer } from './styles';
 import { POST } from '../../services/api';
 
 const SubmitEvents = () => {
-	const history = useHistory()
+	const history = useHistory();
 	const [name, setName] = useState('');
 
 	const [start, setStart] = useState('');
@@ -29,10 +29,11 @@ const SubmitEvents = () => {
 			e.preventDefault();
 
 			const payload = {
-				name,period:
-				{
-				start,
-				end},
+				name,
+				period: {
+					start,
+					end,
+				},
 				description,
 				vacancies,
 				location,
@@ -44,10 +45,10 @@ const SubmitEvents = () => {
 			const validationSchema = Yup.object().shape({
 				name: Yup.string().required(),
 				period: Yup.object().shape({
-        start: Yup.date().required(),
-				end: Yup.date().required(),
+					start: Yup.date().required(),
+					end: Yup.date().required(),
 				}),
-				
+
 				description: Yup.string().required(),
 				vacancies: Yup.number().required(),
 				location: Yup.string().required(),
@@ -58,9 +59,7 @@ const SubmitEvents = () => {
 			await validationSchema.validate(payload);
 
 			await POST('/events', payload);
-			history.push('/home')
-
-			
+			history.push('/home');
 		} catch (error) {
 			console.log(error);
 
@@ -77,7 +76,7 @@ const SubmitEvents = () => {
 				case 500:
 					return alert('Ocorreu um erro que não conseguimos lidar.');
 				default:
-					return alert('API deu o prego');
+					return alert('Ocorreu um erro que não conseguimos lidar.');
 			}
 		}
 	};
@@ -121,8 +120,9 @@ const SubmitEvents = () => {
 						label='Observações'
 						value={observations}
 						onChange={(e) => setObservations(e.target.value)}></Input>
-					
-						<Input label='Insira a URL da Capa do evento'
+
+					<Input
+						label='Insira a URL da Capa do evento'
 						value={photo}
 						onChange={(e) => setPhoto(e.target.value)}></Input>
 					<Button type='submit'>SOLICITAR</Button>
