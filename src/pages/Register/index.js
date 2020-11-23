@@ -44,6 +44,7 @@ const Register = () => {
 			await validationSchema.validate(payload);
             window.location = '/';
             console.log(course)
+            alert("Cadastro Finalizado! Realize o Login")
 		} catch (error) {
 			if (error instanceof Yup.ValidationError) {
 				return alert('Preencha todos os campos corretamente');
