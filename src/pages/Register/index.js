@@ -42,7 +42,8 @@ const Register = () => {
 			});
 
 			await validationSchema.validate(payload);
-			window.location = '/';
+            window.location = '/';
+            console.log(course)
 		} catch (error) {
 			if (error instanceof Yup.ValidationError) {
 				return alert('Preencha todos os campos corretamente');
