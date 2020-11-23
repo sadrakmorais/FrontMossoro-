@@ -15,8 +15,9 @@ const Register = () => {
 	const [password, setPassword] = useState('');
 	const [name, setName] = useState('');
 	const [phone, setPhone] = useState('');
-	const [course, setCourse] = useState('');
+	let [course, setCourse] = useState('');
     const registration = '123456';
+    course = "5fbbcb548af6360024abc050"
 
 
 	const HandleRegister = async (e) => {
