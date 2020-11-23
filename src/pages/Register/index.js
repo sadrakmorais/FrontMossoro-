@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Axios from 'axios';
 import * as Yup from 'yup';
+import { POST } from '../../services/api';
 
 import Form from '../../components/Form';
 import Button from '../../components/Button';
@@ -32,7 +32,7 @@ const Register = () => {
 				password,
 				phone,
 			};
-			await Axios.post('http://localhost:3000/api/v1/users', payload);
+			await POST('/users', payload);
 			const validationSchema = Yup.object().shape({
 				email: Yup.string().required(),
 				cpf: Yup.string().required(),
