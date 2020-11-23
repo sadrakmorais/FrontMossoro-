@@ -16,7 +16,8 @@ const Register = () => {
 	const [name, setName] = useState('');
 	const [phone, setPhone] = useState('');
 	const [course, setCourse] = useState('');
-	const registration = '123456';
+    const registration = '123456';
+
 
 	const HandleRegister = async (e) => {
 		try {
@@ -187,6 +188,9 @@ const Register = () => {
 							</select>
 						</div>
 					)}
+                    {!isStudent &&(
+                         setCourse("5fbbcb548af6360024abc050")
+                    )}
 
 					<Button type='submit'>Finalizar Cadastro</Button>
 				</Form>
